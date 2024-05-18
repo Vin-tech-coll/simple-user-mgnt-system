@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Verify the entered password against the hashed password
             if (password_verify($password, $hashed_password)) {
                 // If password matches, redirect to the dashboard
-                header("Location: dashboard.php");
+                header("Location: home.php");
                 exit; //Ensure that no other output is sent
             } else {
                 // If password does not match, redirect back to the login page with an error message

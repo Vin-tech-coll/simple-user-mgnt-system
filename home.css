@@ -1,0 +1,81 @@
+/* CSS for navigation bar */
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+  width: 200px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.navbar a {
+  display: flex;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.navbar a i {
+  margin-right: 10px;
+}
+
+/* Change the link color to indicate the current page */
+.navbar a.active {
+  background-color: #555;
+}
+
+/* On hover, the color should darken */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* CSS for the welcome message */
+.welcome-message {
+  margin-left: 220px;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.welcome-message h1 {
+  color: #007bff;
+  text-align: center;
+  border-bottom: 3px double #666666;
+}
+
+.welcome-message p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.welcome-message ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.welcome-message ul li {
+  margin-bottom: 10px;
+}
+
+.welcome-message ul li:before {
+  content: '';
+  /* Bullet character */
+  color: #007bff;
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: 4em;
+}
+
+/* CSS for the footer */
+.footer-content {
+  margin-top: 20px;
+  text-align: center;
+  color: #666666;
+}
