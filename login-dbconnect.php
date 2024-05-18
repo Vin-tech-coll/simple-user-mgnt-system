@@ -1,4 +1,6 @@
 <?php
+// Start session
+session_start();
 
 // Assuming you have a database connection established already
 $servername = "localhost";
@@ -33,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Verify the entered password against the hashed password
             if (password_verify($password, $hashed_password)) {
                 // If password matches, redirect to the dashboard
+                $_SESSION['user'] = $username;
                 header("Location: home.php");
                 exit; //Ensure that no other output is sent
             } else {

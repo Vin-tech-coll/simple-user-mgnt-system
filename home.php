@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +18,8 @@
 
     <div class="welcome-message">
         <h1>Welcome to JabaRation User Management System!</h1>
-        <p>Dear User,</p>
+
+        <p>Dear <?php echo $_SESSION['user']?>,</p>
         <p>We're thrilled to have you here! This user management system is designed to make your experience seamless
             and efficient. Here's a brief overview of how it works:</p>
         <ul>
