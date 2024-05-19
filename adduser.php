@@ -56,16 +56,22 @@ $conn->close();
     <?php include 'footer.php'?>
 
 
+
+
     <!-- HTML form to input new user details -->
     <div class="adduserform-container">
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" required><br><br>
+
             <label for="email">Email:</label><br>
             <input type="email" id="email" name="email" required><br><br>
+
             <label for="role">Role:</label><br>
             <input type="text" id="role" name="role" required><br><br>
+
             <input type="submit" value="Add User">
+
         </form>
     </div>
 

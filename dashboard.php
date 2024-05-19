@@ -47,6 +47,7 @@ if(isset($_POST['submit'])){
             <input type="submit" name="submit" value="View Users">
         </form>
     </div>
+
     <?php
 if(isset($_POST['submit'])){
     header("Location: viewusers.php");
@@ -54,35 +55,7 @@ if(isset($_POST['submit'])){
 }
 ?>
 
-    <!-- Update/Edit User -->
-    <div class="form-input">
-        <!-- Form to handle the redirection -->
-        <form action="edituser.php" method="get">
 
-            <input type="submit" name="submit" value="Edit Users">
-        </form>
-    </div>
-    <?php
-if(isset($_POST['submit'])){
-    header("Location: viewusers.php");
-    exit();
-}
-?>
-
-    <!-- Delete User -->
-    <div class="form-input">
-        <!-- Form to handle the redirection -->
-        <form action="deleteuser.php" method="get">
-
-            <input type="submit" name="submit" value="Delete User">
-        </form>
-    </div>
-    <?php
-if(isset($_POST['submit'])){
-    header("Location: viewusers.php");
-    exit();
-}
-?>
 
 
 

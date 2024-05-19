@@ -36,15 +36,25 @@ $result = $conn->query($sql);
         cursor: pointer;
         color: blue;
         text-align: center;
+        font-size: 10px;
+    }
+
+    .delete-btn {
+        cursor: pointer;
+        color: red;
+        text-align: center;
+        font-size: 10px;
     }
 
     /* Style to position the edit button */
-    .edit-btn-container {
+    .edit-btn-container,
+    .delete-btn-container {
         text-align: right;
     }
 
-    .edit-btn-container .edit-btn {
-        margin-left: 10px;
+    .edit-btn-container .edit-btn,
+    .delete-btn-container .edit-btn {
+        margin-left: 5px;
     }
     </style>
 </head>
@@ -55,19 +65,11 @@ $result = $conn->query($sql);
 
     <!--Footer content-->
     <?php include 'footer.php'?>
-    <div class="welcome-message">
-        <h1>JabaRation User Management System</h1>
+
+
+    <div class="heading">
+        <h2>All Users Information</h2>
     </div>
-
-    <div class="form-input">
-        <!-- Form to handle the redirection -->
-        <form action="deleteuser.php" method="get">
-
-            <input type="submit" name="submit" value="Delete User">
-        </form>
-    </div>
-
-    <h2>View All Users</h2>
 
     <table>
         <tbody>
@@ -77,7 +79,6 @@ $result = $conn->query($sql);
                     <th>Name</th>
                     <th>Email</th>
                     <th>Role</th>
-
                 </tr>
             </thead>
         </tbody>
@@ -88,8 +89,12 @@ $result = $conn->query($sql);
             while ($row = $result->fetch_assoc()) {
                 echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td><td>" . $row["email"] . "</td><td>" . $row["role"] . "</td></tr>";
                 
-                echo "<td class='edit-btn-container'><span class='edit-btn' data-id='" . $row["id"] . "'>Edit</span></td>";
+                echo "<td class='edit-btn-container'><span class='edit-btn' data-id='" . $row["id"] . "'><i class='fas fa-edit'></i> Edit</span></td>";
                 echo "</tr>";
+
+                echo "<td class='delete-btn-container'><span class='delete-btn' data-id='" . $row["id"] . "'><i class='fas fa-trash-alt'></i> Delete</span></td>";
+                echo "</tr>";
+
             }
                 
             
@@ -125,8 +130,17 @@ $total_pages = ceil($row["total"] / $limit);
         btn.addEventListener('click', function() {
             const userId = this.getAttribute('data-id');
             // Redirect to edit page or open a modal for editing
-            window.location.href = 'edituser.php?id=' +
-                userId; // Change edituser.php to your actual edit page URL
+            window.location.href = 'edituser.php?id=' + userId;
+        });
+    });
+
+    // Add event listener for delete button clicks
+    document.querySelectorAll('.delete-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const userId = this.getAttribute('data-id');
+            if (confirm("Are you sure you want to delete this user?")) {
+                window.location.href = 'deleteuser.php?id=' + userId;
+            }
         });
     });
     </script>

@@ -23,7 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "UPDATE employees SET name='$name', email='$email', role='$role' WHERE id='$id'";
 
     if ($conn->query($sql) === TRUE) {
-        echo "User updated successfully";
+        //Redirect to viewusers.php after successful update
+        header("Location: viewusers.php");
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -76,16 +77,24 @@ $conn->close();
 
     <h2>Update/Edit User</h2>
 
-    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-        <input type="hidden" name="id" value="<?php echo $id; ?>">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" value="<?php echo $name; ?>" required><br><br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" value="<?php echo $email; ?>" required><br><br>
-        <label for="role">Role:</label><br>
-        <input type="text" id="role" name="role" value="<?php echo $role; ?>" required><br><br>
-        <input type="submit" value="Save">
-    </form>
+    <div class="adduserform-container">
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <input type="hidden" name="id" value="<?php echo $id; ?>">
+
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" value="<?php echo $name; ?>" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" value="<?php echo $email; ?>" required><br><br>
+
+            <label for="role">Role:</label><br>
+            <input type="text" id="role" name="role" value="<?php echo $role; ?>" required><br><br>
+
+            <input type="submit" value="Save">
+
+        </form>
+    </div>
+
 
 </body>
 

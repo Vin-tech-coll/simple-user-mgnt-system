@@ -14,9 +14,11 @@
 
     <!--Footer content-->
     <?php include 'footer.php'?>
+
     <div class="welcome-message">
         <h1>JabaRation User Management System</h1>
     </div>
+    
     <div class="logout-message">
         <h2>Dear <?php echo $_SESSION['user']?>,</h2>
         <p>Welcome back next time!</p>

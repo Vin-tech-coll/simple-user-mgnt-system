@@ -24,6 +24,9 @@ if (isset($_GET['id'])) {
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
+    //Redirect back to viewusers.php after deletion
+    header('Location: viewusers.php');
+    exit();
 }
 
 $conn->close();
@@ -36,13 +39,8 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Delete User</title>
-    <script>
-    function confirmDelete(id) {
-        if (confirm("Are you sure you want to delete this user?")) {
-            window.location.href = "delete_user.php?id=" + id;
-        }
-    }
-    </script>
+
+
 </head>
 
 <body>
@@ -52,39 +50,9 @@ $conn->close();
     <!--Footer content-->
     <?php include 'footer.php'?>
 
-    <div class="welcome-message">
-        <h1>JabaRation User Management System</h1>
-    </div>
 
     <h2>Delete User</h2>
-
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Role</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-        // Fetch users
-        $sql = "SELECT * FROM employees";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0) {
-            // Output data of each user
-            while ($row = $result->fetch_assoc()) {
-                echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td><td>" . $row["email"] . "</td><td>" . $row["role"] . "</td><td><button onclick='confirmDelete(" . $row["id"] . ")'>Delete</button></td></tr>";
-            }
-        } else {
-            echo "<tr><td colspan='5'>No users found</td></tr>";
-        }
-        ?>
-        </tbody>
-    </table>
-
+    <p>User deletion process initiated.</p>
 </body>
 
 </html>
