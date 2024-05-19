@@ -11,13 +11,34 @@
 </head>
 
 <body>
+
     <!--Navbar content-->
     <?php include 'navbar.php'?>
 
     <!--Footer content-->
     <?php include 'footer.php'?>
 
-</body>
+    <div class="welcome-message">
+        <h1>JabaRation User Management System</h1>
+    </div>
 
+    <div class="form-input">
+        <!-- Form to handle the redirection -->
+        <form action="adduser.php" method="get">
+
+            <input type="submit" name="submit" value="Add New User">
+        </form>
+    </div>
+
+
+    <?php
+if(isset($_POST['submit'])){
+    header("Location: adduser.php");
+    exit();
+}
+?>
+
+
+</body>
 
 </html>
