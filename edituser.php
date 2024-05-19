@@ -58,12 +58,23 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update User</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="home.css">
+    <title>Edit User</title>
 </head>
 
 <body>
+    <!--Navbar content-->
+    <?php include 'navbar.php'?>
 
-    <h2>Update User</h2>
+    <!--Footer content-->
+    <?php include 'footer.php'?>
+
+    <div class="welcome-message">
+        <h1>JabaRation User Management System</h1>
+    </div>
+
+    <h2>Update/Edit User</h2>
 
     <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
         <input type="hidden" name="id" value="<?php echo $id; ?>">

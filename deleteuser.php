@@ -46,6 +46,15 @@ $conn->close();
 </head>
 
 <body>
+    <!--Navbar content-->
+    <?php include 'navbar.php'?>
+
+    <!--Footer content-->
+    <?php include 'footer.php'?>
+
+    <div class="welcome-message">
+        <h1>JabaRation User Management System</h1>
+    </div>
 
     <h2>Delete User</h2>
 
@@ -56,7 +65,6 @@ $conn->close();
                 <th>Name</th>
                 <th>Email</th>
                 <th>Role</th>
-                <th>Action</th>
             </tr>
         </thead>
         <tbody>

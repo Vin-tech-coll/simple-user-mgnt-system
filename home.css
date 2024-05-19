@@ -65,7 +65,6 @@
 
 .welcome-message ul li:before {
   content: '';
-  /* Bullet character */
   color: #007bff;
   font-weight: bold;
   display: inline-block;
@@ -96,12 +95,13 @@ footer {
   margin-top: 20px;
   text-align: center;
   color: #666666;
+  font-size: 15px;
 }
 
 .form-input {
   width: 120px;
-  margin: 20px 220px;
-  padding: 15px 0;
+  margin: 10px 180px;
+  padding: 15px 40px;
 }
 input[type='submit'] {
   width: 100%;
@@ -120,8 +120,8 @@ input[type='submit']:hover {
 
 .adduserform-container {
   display: flex;
-  justify-content:center;
-  align-items:center;
+  justify-content: center;
+  align-items: center;
   width: 300px;
   margin: 100px auto;
   padding: 20px;
@@ -129,4 +129,30 @@ input[type='submit']:hover {
   border-radius: 5px;
   background-color: #a39ead;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+table {
+  width: 50%;
+  border-collapse: collapse;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.pagination-container {
+  position: fixed;
+  top: 30%;
+  right: 40px;
+  transform: translate(0, -50%);
 }

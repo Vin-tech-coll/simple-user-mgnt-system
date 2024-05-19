@@ -23,7 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO employees (name, email, role) VALUES ('$name', '$email', '$role')";
 
     if ($conn->query($sql) === TRUE) {
-        echo "New user added successfully";
+        header("Location: viewusers.php");
+        exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
