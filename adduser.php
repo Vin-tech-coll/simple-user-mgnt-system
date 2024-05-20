@@ -56,8 +56,6 @@ $conn->close();
     <?php include 'footer.php'?>
 
 
-
-
     <!-- HTML form to input new user details -->
     <div class="adduserform-container">
         <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
